@@ -11,13 +11,15 @@
                  [reagent "0.6.2"
                   :exclusions [cljsjs/react cljsjs/react-dom cljsjs/react-dom-server cljsjs/create-react-class]]]
 
-  :plugins [[lein-cljsbuild "1.1.6" :exclusions [[org.clojure/clojure]]]]
+  :plugins [[lein-figwheel "0.5.10"]
+            [lein-cljsbuild "1.1.6" :exclusions [[org.clojure/clojure]]]]
 
   :source-paths ["src"]
 
   :cljsbuild {:builds
               [{:id "dev"
                 :source-paths ["src"]
+                :figwheel true
                 :compiler {:main app.core
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/app.js"
@@ -37,7 +39,13 @@
                            :optimizations :advanced
                            :pretty-print false}}]}
 
-  :profiles {:dev {:dependencies [[binaryage/devtools "0.9.2"]]
+  :figwheel {:css-dirs ["resources/public/css"]}
+
+  :profiles {:dev {:dependencies [[binaryage/devtools "0.9.2"]
+                                  [figwheel-sidecar "0.5.10"]
+                                  [com.cemerick/piggieback "0.2.1"]]
+
+                   :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
                    ;; need to add the compliled assets to the :clean-targets]
                    :clean-targets ^{:protect false} ["resources/public/js/compiled"

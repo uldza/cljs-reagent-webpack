@@ -1,16 +1,9 @@
 {
-  "name": "@roman01la/app",
-  "version": "1.0.0",
-  "description": "FIXME: Write a one-line description of your library/project.",
-  "main": "index.js",
   "scripts": {
     "start:js": "webpack -w",
-    "start:cljs": "lein clean && rlwrap lein cljsbuild auto dev",
+    "start:cljs": "lein clean && rlwrap lein figwheel dev",
     "build": "lein clean && lein cljsbuild once min && webpack -p"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "create-react-class": "^15.5.3",
     "react": "^15.5.4",
