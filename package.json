@@ -2,7 +2,7 @@
   "scripts": {
     "start:js": "webpack -w",
     "start:cljs": "lein clean && rlwrap lein figwheel dev",
-    "build": "lein clean && lein cljsbuild once min && webpack -p"
+    "build": "lein clean && lein cljsbuild once min && NODE_ENV=production webpack -p"
   },
   "devDependencies": {
     "create-react-class": "^15.5.3",
