@@ -14,7 +14,7 @@
 
 ## Development
 
-1. Set `:optimizations :none` in compiler options
+1. Set `:optimizations :simple` in compiler options
 2. Run ClojureScript build in watch mode `rlwrap lein cljsbuild auto dev`
 3. Run Webpack in watch mode `webpack -w`
 
