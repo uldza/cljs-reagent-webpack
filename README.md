@@ -5,9 +5,9 @@
 
 ## Setup
 
-1. Include deps from [CLJSJS](http://cljsjs.github.io/) to provide [externs](https://github.com/cljsjs/packages/wiki/Creating-Externs)
-2. Include NPM deps
-3. [Alias CLJSJS deps](https://github.com/roman01la/cljs-reagent-webpack/tree/master/src/cljsjs) with empty namespaces, so those deps could be pulled from NPM instead of CLJSJS
+1. Install NPM deps
+2. [Exclude CLJSJS deps from Reagent](https://github.com/roman01la/cljs-reagent-webpack/blob/master/project.clj#L12)
+3. [Alias excluded CLJSJS deps](https://github.com/roman01la/cljs-reagent-webpack/tree/master/src/cljsjs) with empty namespaces, so ClojureScript code can be compiled without those deps code
 4. Configure Webpack with ClojureScript output bundle as an entry point
 
 ## Production Build
