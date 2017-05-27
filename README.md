@@ -1,11 +1,14 @@
 # ClojureScript's Reagent + Webpack + NPM
 
+- Webpack for bundling ClojureScript output with NPM deps
+- Figwheel for web server and hot-reloading in development
+
 ## Setup
 
 1. Include deps from CLJSJS to provide externs
 2. Include NPM deps
 3. Alias CLJSJS deps with empty namespaces, so those deps could be pulled from NPM instead of CLJSJS
-4. Configure Webpack with CLojureScript output bundle as an entry point
+4. Configure Webpack with ClojureScript output bundle as an entry point
 
 ## Production Build
 
